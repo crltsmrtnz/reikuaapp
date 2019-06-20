@@ -1,0 +1,281 @@
+body {
+    background-color:#778899;
+    margin:0; padding:0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.color1 {
+    background-color: #ea5e48;
+}
+.color2 {
+    background-color: #fff;
+}
+.color3 {
+    background-color: #cccccc;
+}
+.text-color{
+    color: #ea5e48;
+}
+.text-color2 {
+    color: #fff;
+}
+nav {
+    padding: 24px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+ul li a, ul li  {
+    font-weight: 500;
+    color: #fff !important;
+}
+
+.nav-link {
+    transition: 0.8s;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  .nav-link:hover {
+    background-color: #ffffff;
+    padding: 8px 5px;
+    color:#ea5e48 !important;
+    border-radius: 15px;
+  }
+  .img-primero{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ea5e48;
+    border-radius: 20px 20px 20px 20px;
+}
+  
+
+  /*
+  nav {
+    padding: 24px;
+    text-align: center;
+    font-family: Raleway;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    background: #ea5e48;
+  }
+
+  .nav-link {
+    transition: 0.3s ease;
+    background: #ea5e48;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    border-top: 4px solid #ea5e48;
+    border-bottom: 4px solid #ea5e48;
+    padding: 6px 0;
+    margin: 0 6px;
+  }
+  .nav-link:hover {
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding: 3px 0; 
+  }
+  */
+
+
+
+.marker {
+  background-image: url('../img/marker.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.img-primero .top-content {
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.img-primero .bottom-content {
+    padding: 20px;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+
+.img-primero img {
+    width: 85px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#map { position:absolute; top:0; bottom:0; width:100%; }
+.mapboxgl-ctrl-top-right {
+    top: 170px;
+    right: 20px;
+    z-index: 50;
+}
+.pistas {
+    position: relative;
+    left: 10px;
+    top: 40px;
+    width: 250px;
+    height: auto;
+    min-height: 450px;
+    color: #000;
+    font-weight:normal;
+    font-size: 12px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px silver;
+    z-index: 0;    
+}
+
+    .logo-animado {
+        width: 100%;
+        height: 200px;
+    }
+
+    .imgInicioPista {
+        position: absolute;
+        z-index: 1;
+        border: 1px solid red;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-weight:400 ;
+        color: #fff;
+        display: block; 
+    }
+
+        .imgPista{
+            border-radius: 20px 20px 0 0 ;
+        }
+        .textoPista {
+            letter-spacing: 1px;
+            line-height: 15px;
+            font-weight: 700;
+        }
+
+    .imgInicioTxt {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    .btn-primary {
+        color: #fff;
+        background-color: #ea5e48;
+        border-color: silver;
+    }
+    .btn-primary:focus {
+        box-shadow: 0 0 0 0.1rem #9E9E9E;
+    }
+    .btn-primary:hover {
+        color: #ea5e48 !important;
+        background-color: #fff !important;
+        border-color: #ea5e48 !important;
+    }
+    .sweet-alert, .lead.text-muted {
+        color: #ea5e48 !important;
+    }
+
+    section {
+        padding: 150px 0; 
+    }
+    section h2.section-heading {
+        font-size: 40px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    section h3.section-subheading {
+        font-size: 16px;
+        font-weight: 400;
+        font-style: italic;
+        margin-bottom: 75px;
+        text-transform: none;
+    }
+    .team-member {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    .team-member img {
+        width: 225px;
+        height: 225px;
+        border: 7px solid #fff;
+    }
+    .team-member h4 {
+        margin-top: 25px;
+        margin-bottom: 0;
+        text-transform: none;
+    }
+    .team-member p {
+        margin-top: 0;
+    }
+    ul.social-buttons {
+        margin-bottom: 0;
+    }
+    ul.social-buttons li a {
+        font-size: 20px;
+        line-height: 50px;
+        display: block;
+        width: 50px;
+        height: 50px;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        color: #fff;
+        border-radius: 100%;
+        outline: 0;
+        background-color: #212529;
+    }
+    .fa, .fab, .fal, .far, .fas {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+    }
+    .fa-twitter:before {
+        content: "\f099";
+    }
+    .fa-facebook-f:before {
+        content: "\f39e";
+    }
+    .fa-linkedin-in:before {
+        content: "\f0e1";
+    }
+
+    h4.descripcioTeam {
+        line-height: 42px;
+        letter-spacing: 2px;
+    }
+    
+
+@media (max-width: 575.98px) {
+    .pistas {
+        top: 60px;
+        width: 150px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .pistas {
+        top: 10px;
+        font-size: 12px;
+        min-height: 450px;
+    }
+    ul.navbar-nav {
+        margin: auto;
+    }
+    li.nav-item {
+        width: 150px;
+        margin: auto;
+    }
+
+    
+ }

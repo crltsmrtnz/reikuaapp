@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="title" content="Reikuapy">
+		<meta name="description" content="Juego para encontrar lugares turisticos e icónicos del Paraguay">
+		<meta name="author" content="Reikuaap Team 1°_BootCamp019" >
+		<meta name="keywords" content="Reikueaap, Paraguay, turismo, cultura, juego, web, Penguin Academy, BootCamp">
+		<link rel="icon" href="{{ url_for('static', filename='img/ico.ico') }}">
+		<title>Reikuaap</title>
+		<!-- Google fonts-->	
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+		<!-- Bootstrap  CSS-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
+		<!-- Sweet alert -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+		<!-- MAPA -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/mapa2.css') }}" type="text/css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/mapa.css') }}" type="text/css">
+		<!-- estilos CSS  personalizados--> 
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}" type="text/css">
+	</head>
+
+	<body >
+		<!-- Barra de menus-->
+		<nav class="navbar navbar-expand-lg navbar-light color1">
+			<a class="navbar-brand" href="/">
+					<img src="{{ url_for('static', filename='img/reikuaap_logo.png') }}" alt="mapa" class="img-fluid " width="150" height="150">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse text-center " id="navbarNavDropdown">
+			  <ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="/nosotros">Nosotros</a>
+				</li>
+				
+			  </ul>
+			</div>
+		</nav><!-- Barra de menus-->
+
+		<div class="container-fluid">
+			<div class="row align-items-center">
+
+				<!-- Contenedor del mapa-->
+				<div  id='map'>
+				</div><!-- Contenedor del mapa-->
+
+				<!-- Contenedor de las pistas-->
+				<div class="pistas color1">
+
+					<!-- Contenedor de la primera imagen a visualizar-->
+					<div class="imgInicioPista d-flex align-items-center justify-content-center hidden">
+
+							<div class="text-center" >
+									<div class="img-fluid logo-animado" id="lottie"></div>
+									<p class="mt-3">Encuentra el edificio <br> en el mapa!</p>
+							</div>
+					</div><!-- Contenedor de la primera imagen a visualizar-->
+
+					<!-- Contenedor de lasegunda imagen con texto de pista a visualizar-->
+					<div class="imgInicioTxt hidden">
+						<img src="{{ url_for('static', filename='img/palacioLopez.jpg') }}" alt="mapa" class="img-fluid imgPista">
+						<h5 class="text-center m-0 pt-3 pb-3">El Palacio de López</h5>
+						<p class=" textoPista  m-0 pr-3 pl-3 pb-2 text-left">También llamado usualmente Palacio de Gobierno o Palacio Presidencial, es la sede del gobierno de la República del Paraguay, debido a que ahí se encuentra el despacho oficial del presidente de la República. Es uno de los edificios más emblemáticos de la capital paraguaya, Asunción</p>
+
+						<div class="text-right mr-4 mb-2">
+							<a href="https://es.wikipedia.org/wiki/Palacio_de_los_L%C3%B3pez" class="">
+								Ver más
+							</a>
+						</div>
+					</div><!-- Contenedor de lasegunda imagen con texto de pista a visualizar-->
+
+					<div class="img-primero ">
+						<div class="top-content">
+
+						</div>
+						<div class="bottom-content">							
+							<span>Señala en el mapa donde creés esta ubicado el lugar histórico de la imagen.</span><br><br>
+							<img src="{{ url_for('static', filename='img/img_0.png') }}" alt="">
+						</div>
+					</div>
+
+				</div><!-- Contenedor de las pistas-->
+
+			</div><!-- container-fluid -->
+		</div><!-- Row -->
+
+
+		<script src="{{ url_for('static', filename='js/jquery.js') }}" type="text/javascript" ></script>
+		<script src="{{ url_for('static', filename='js/popper.min.js') }}" type="text/javascript" ></script>
+		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" type="text/javascript" ></script>
+		<script src="{{ url_for('static', filename='js/mapa2.js') }}" type="text/javascript" ></script>
+		<script src="{{ url_for('static', filename='js/mapa.js') }}" type="text/javascript" ></script>
+		<!-- animacion de la primera imagen de bienvenida -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.4.3/lottie_canvas.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.4.3/lottie_html.js"></script>
+		<!-- funciones del mapa -->
+		<script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript" ></script>
+		<!-- Sweet alert -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js" type="text/javascript" ></script>
+		<!-- scripts personalizados -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/scripts.js" type="text/javascript" ></script>
+		<script>
+			var animation = bodymovin.loadAnimation({
+				container: document.getElementById('lottie'), // Required
+				path: 'static/data.json', // Required
+				renderer: 'svg/canvas/html', // Required
+				loop: true, // Optional
+				autoplay: true, // Optional
+				name: "Hello World", // Name for future reference. Optional.
+			})
+		</script>
+
+
+		<script>
+			mapboxgl.accessToken = 'pk.eyJ1Ijoic29sYmVuY2FzIiwiYSI6ImNqczBmbmJheDFqMGM0NW80ajUwaTA5MzUifQ.Z5_mUdouS1V8QZ6lCjP4rw';
+			const map = new mapboxgl.Map({
+				container: 'map',
+				style: 'mapbox://styles/solbencas/cjs0g31g31sa91fo9nx8skrfm',
+				center: [-57.596251, -25.296120],
+				zoom: 12
+				});
+
+
+		// Add zoom and rotation controls to the map.
+		map.addControl(new mapboxgl.NavigationControl());
+			// Add geolocate control to the map.
+			map.addControl(new mapboxgl.GeolocateControl({
+			positionOptions: {
+			enableHighAccuracy: true
+			},
+			trackUserLocation: true
+			}));
+		</script>
+	</body>
+</html>
